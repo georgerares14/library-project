@@ -1,0 +1,248 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template: 1fr 8fr / 2fr 4fr;
+    height: 100vh;
+}
+
+header {
+    grid-area: 1/1/2/3;
+    color: white;
+    padding: 10px;
+    background-color: rgb(0, 136, 255);
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0px 3px 3px rgba(86, 86, 86, 0.333);
+    z-index: 1;
+}
+
+.logo {
+    fill: white;
+    height: 3em;
+}
+
+
+aside {
+    grid-area: 2/1/3/2;
+    align-content: center;
+    background-color: white;
+    box-shadow: inset -2px 0px 9px 0px rgba(86, 86, 86, 0.333);
+}
+
+main {
+    grid-area: 2/2/3/3;
+    background-color: rgb(219, 219, 219);
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 20px;
+}
+
+aside>p {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+label {
+    display: block;
+}
+
+/* Card pentru carte */
+.book-card {
+    padding: 20px;
+    border: 1px solid #ddd; /* Margine discretă */
+    border-radius: 12px; /* Colțuri rotunjite */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbra pentru efect 3D */
+    background-color: white;
+    flex-basis: 25%; /* Ajustare flexibilă */
+    display: flex;
+    flex-direction: column; /* Elemente plasate vertical */
+    justify-content: space-between; /* Elemente distribuite uniform */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animație */
+    position: relative; /* Necesară pentru plasarea absolută a SVG-urilor */
+}
+
+.book-card:hover {
+    transform: translateY(-5px); /* Efect de ridicare la hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Umbra mai accentuată */
+}
+
+/* SVG-ul 'eye-outline' (toggle read status) */
+.book-card .eye-icon {
+    fill: #007bff; /* Culoare albastră */
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px; /* Plasat în colțul din stânga-sus */
+    cursor: pointer; /* Indică faptul că este clicabil */
+    transition: transform 0.2s ease, fill 0.2s ease; /* Animație */
+}
+
+.book-card .eye-icon:hover {
+    fill: #0056b3; /* Culoare albastră mai închisă la hover */
+    transform: scale(1.2); /* Mărire la hover */
+}
+
+/* Buton de ștergere */
+.remove-btn {
+    fill: #d9534f; /* Roșu pentru iconiță */
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Plasat în colțul din dreapta-sus */
+    transition: transform 0.2s ease, fill 0.2s ease; /* Animație */
+}
+
+.remove-btn:hover {
+    transform: scale(1.2); /* Efect de mărire la hover */
+    fill: #c9302c; /* Roșu mai închis */
+}
+
+/* Text general din card */
+.book-card p {
+    margin: 10px 0;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Titlu carte */
+.book-card p:first-of-type {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333; /* Culoare închisă pentru titlu */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Subtitlu (autorul) */
+.book-card p:nth-of-type(2) {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #666; /* Culoare subtilă */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Detalii despre carte */
+.book-card p:nth-of-type(3) {
+    font-size: 1rem;
+    color: #777;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column; /* Elemente plasate pe verticală */
+    gap: 5px; /* Spațiu între detalii */
+}
+
+
+
+aside {
+    grid-area: 2/1/3/2; /* Ocupă exact zona grilei definită */
+    display: flex;
+    flex-direction: column; /* Elemente plasate vertical */
+    align-items: center; /* Centrează orizontal */
+    justify-content: space-between; /* Spațiere între elemente */
+    background-color: white; /* Fundal alb, pentru consistență */
+    box-shadow: inset -2px 0px 9px 0px rgba(86, 86, 86, 0.333); /* Shadow pentru delimitare */
+    padding: 20px; /* Spațiu interior */
+    height: 100%; /* Asigură că ocupă toată înălțimea zonei grilei */
+    box-sizing: border-box; /* Include padding-ul în dimensiuni */
+}
+
+aside > p {
+    text-align: center;
+    font-size: 1.5rem; /* Titlu proeminent */
+    color: #333; /* Culoare închisă pentru text */
+    margin-bottom: 20px; /* Spațiu sub titlu */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Elemente întinse pe lățimea formularului */
+    gap: 15px; /* Spațiu între elementele formularului */
+    width: 100%; /* Formularul ocupă lățimea completă a aside */
+}
+
+label {
+    font-size: 1rem;
+    color: #555; /* Text mai subtil */
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button#addbook {
+    padding: 10px 20px;
+    background-color: #007bff; /* Albastru consistent */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Centrează butonul */
+    width: 100%; /* Ocupă toată lățimea formularului */
+}
+
+button#addbook:hover {
+    background-color: #0056b3; /* Albastru mai închis la hover */
+}
+
+/* Stilizează containerul radio button */
+form span:last-of-type {
+    display: flex;
+    justify-content: space-between; /* Elemente distribuite uniform */
+    align-items: center; /* Centrare verticală */
+    width: 100%; /* Ocupă toată lățimea formularului */
+}
+
+/* Dimensiuni mai mari pentru radio button */
+input[type="radio"] {
+    width: 20px; /* Dimensiunea cercului */
+    height: 20px; /* Dimensiunea cercului */
+    margin-right: 10px; /* Spațiu între cerc și text */
+    cursor: pointer; /* Indică faptul că este clicabil */
+}
+
+/* Stilizează etichetele */
+form span:last-of-type label {
+    font-size: 1.2rem; /* Dimensiune text mai mare */
+    color: #333; /* Culoare text închisă */
+    display: flex;
+    align-items: center; /* Radio button-ul și textul sunt centrate */
+    gap: 10px; /* Spațiu între radio button și text */
+}
+
+/* Feedback vizual la hover */
+form span:last-of-type label:hover input[type="radio"] {
+    outline: 2px solid #007bff; /* Highlight cercul la hover */
+    outline-offset: 2px;
+}
