@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    display: grid;
+    grid-template: 1fr 8fr/ 3fr 8fr;
+    height: 100vh;
+}
+
+header {
+    background-color: rgb(29, 123, 255);
+    padding: 20px 10px;
+    grid-area: 1/1/2/3;
+    box-shadow: -1px 3px 4px 0px #80808069;
+    z-index: 1;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 5px;
+}
+
+.logo-title svg{
+    height: 3em;
+    fill:white;
+}
+
+aside {
+    grid-area: 2/1/3/2;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+aside h2, aside button {
+    align-self: center;
+}
+
+aside button {
+    background-color: rgb(29, 123, 255);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+}
+
+aside button:hover {
+    transform: scale(1.1); 
+
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-evenly;
+
+}
+
+label {
+    display: block;
+    font-size: 1.4em;
+}
+
+input {
+    height: 2em;
+    border-radius: 20px;
+}
+
+main {
+    grid-area: 2/2/3/3;
+}
+
+
+
+
+aside {
+    grid-area: 2/1/3/2;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrează vertical conținutul */
+    align-items: center; /* Centrează orizontal conținutul */
+    background-color: #f0f4ff; /* Fundal deschis, complementar cu header-ul */
+    box-shadow: inset -2px -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+aside h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #333;
+    text-align: center; /* Centrare text */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Organizează elementele pe verticală */
+    align-items: center; /* Centrează inputurile */
+    gap: 20px; /* Spațiu între elementele formularului */
+    width: 100%; /* Lățime completă pentru formular */
+    max-width: 300px; /* Dimensiune maximă pentru formular */
+}
+
+form span {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Lățime completă */
+    align-items: flex-start; /* Centrează conținutul */
+}
+
+label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: black; /* Culoare neagră pentru label */
+    text-align: center; /* Centrare pentru text */
+    margin-bottom: 5px; /* Mic spațiu sub label */
+}
+
+input {
+    width: 100%; /* Inputurile ocupă lățimea formularului */
+    max-width: 280px; /* Dimensiune maximă */
+    height: 2.5em; /* Înălțime definită */
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    font-size: 1em;
+    outline: none;
+    transition: border 0.2s ease, background-color 0.2s ease;
+    background-color: #f5f5f5; /* Nuanță deschisă de gri */
+}
+
+input:focus {
+    border: 1px solid #1d7bff; /* Albastru la focus */
+    background-color: #ffffff; /* Fundal alb la focus */
+}
+
+aside button {
+    background-color: rgb(29, 123, 255);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 1em;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 80%; /* Lățime completă */
+    max-width: 300px; /* Dimensiune maximă */
+    text-align: center; /* Centrare text */
+    box-shadow: 2px 3px 5px 0px #8080804
+}
+
+aside button:hover {
+    transform: scale(1.1);
+    background-color: rgb(20, 90, 200);
+}
+
+/* Butoane radio și etichete pe aceeași linie */
+span:last-of-type {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Aliniază butoanele și etichetele pe verticală */
+    justify-content: center; /* Centrează conținutul */
+    gap: 15px; /* Spațiu între butoanele radio și etichete */
+    width: 100%; /* Lățime completă */
+    max-width: 300px; /* Dimensiune maximă */
+}
+
+span:last-of-type label {
+    display: flex;
+    align-items: center; /* Aliniază butonul radio cu textul */
+    gap: 5px; /* Mic spațiu între buton și text */
+    font-size: 1em;
+}
+
+span:last-of-type input[type="radio"] {
+    width: 1.2em;
+    height: 1.2em;
+}
